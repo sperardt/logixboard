@@ -78,13 +78,15 @@ export const ShipmentsPage: React.FC = () => {
     let component: ReactElement
     switch (fetchShipmentsResult.status) {
         case 'SUCCESS':
-            component = <DataGrid
-                className={classes.grid}
-                rows={fetchShipmentsResult.shipments}
-                columns={COLUMNS}
-                pageSize={20}
-                disableSelectionOnClick
-            />
+            component = <div style={{minWidth: "100%", height: "90%"}}>
+                        <DataGrid
+                        className={classes.grid}
+                        rows={fetchShipmentsResult.shipments}
+                        columns={COLUMNS} 
+                        autoPageSize pagination
+                        disableSelectionOnClick
+                    />
+                </div>
             break;
         case 'LOADING':
             component = <Box className={classes.loader}>
