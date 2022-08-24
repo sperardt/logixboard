@@ -16,6 +16,8 @@ export type FetchShipmentsResult =
     | ErrorResult
     | SuccessResult
 
+export type ShipmentsResult = Shipment[];
+
 // To make your life easier, we'll adjust the dates to be more current
 const millisToAdd = new Date().getTime() - new Date("4/19/19").getTime()
 const adjustDateString = (dateString: string): string => {
